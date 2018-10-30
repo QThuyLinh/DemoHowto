@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .tab{
+            overflow: hidden; /*tràn*/
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button{
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none; /*tương tự border*/
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover{
+            background-color: #ddd;
+        }
+
+        .tab button.active{
+            background-color: #ccc;
+        }
+        .tabcontent{
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        /*phai trong nd tab*/
+        .tabcontent{
+            animation: fadeEffect 1s; /*hiệu ứng mờ mất 1s*/
+        }
+        /*doi từ 0 đên toàn bộ độ mờ*/
+        @keyframes fadeEffect {
+            from{opacity: 0;}
+            to {opacity: 1; }
+
+        }
+    </style>
+</head>
+<body>
+    <!--Tabs link-->
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')" >Paris</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    </div>
+    <!-- Tabs contents-->
+    <div id="London" class="tabcontent">
+        <!--Đóng 1 tab cụ thể-->
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <!--Đóng 1 tab cụ thể-->
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <!--Đóng 1 tab cụ thể-->
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+
+    </div>
+    <script>
+        function openCity(evt, cityName) {
+            // Khai báo biến
+            var i, tabcontent, tablinks;
+            //
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for(i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+            //Nhận tất cả các phần tử có class = "tablinks" và xóa lớp "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for(i = 0; i < tablinks.length; i++){
+                tablinks[i].className = tablinks[i].className.replace("active", "");
+            }
+            //Hiển thị tab hiện tại và thêm lớp "hoạt động" vào nút đã mở tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += "active";
+        }
+        // mở cụ thể 1 trang
+        document.getElementById("defaultOpen").click();
+
+    </script>
+</body>
+</html>
