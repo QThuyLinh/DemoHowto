@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        .sidenav{
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+        .sidenav a{
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+        .sidenav a:hover{
+            color: #f1f1f1;
+        }
+        .main{
+            margin-left: 160px; /*Giống như chiều rộng của sidenav*/
+            font-size: 28px; /*Giống như chiều rộng của sidebar*/
+            padding: 0px 10px;
+        }
+
+        /**/
+        @media screen and(max-width: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav  a {font-size: 18px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="main">
+        <h2>Hoa sen</h2>
+        <p>Sen trắng tượng trưng cho sự thuần hóa của nhân tính, bồ đề tâm hay còn gọi là giác tâm, thường có 8 cánh ứng với Bát chính đạo.
+            Nó là đặc trưng của phái Mật tông và là đoá sen của các vị Phật.</p>
+        <p>Sen đỏ tượng trưng cho bản chất nguyên thuỷ của trái tim, là đoá hoa của tình yêu, đam mê và sự năng động.
+            Đây là loại sen của Quan Thế Âm.</p>
+        <p>
+            Sen xanh là biểu tượng của trí tuệ, tri thức của chiến thắng của tinh thần đối với các cảm quan.
+            Đây là loại sen của Văn Thù Sư Lợi, hiện thân của trí tuệ viên thành.
+        </p>
+        <p>
+            Sen hồng là loại sen tối thượng, thường được dành cho các vị tối cao,
+            là đoá sen của những vị tu theo giáo phái nguyên thủy.
+        </p>
+        <p>
+            Sen tím thẫm là đóa sen huyền diệu, biểu thị những ảnh tượng của phái Mật tông. Các đoá hoa có thể đang còn e ấp hoặc đã được nở bung hết. Chúng có thể được nâng đỡ bởi một cọng hay ba cọng hoa (tượng trưng cho ba phần của Garbhabatu: Vairocana, hoa sen và vajra)
+            hoặc năm cánh hoa tượng trưng cho Năm tri thức của Vajradhatu.
+        </p>
+    </div>
+</body>
+</html>

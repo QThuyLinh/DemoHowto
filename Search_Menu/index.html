@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        /*Tạo bố cục cột*/
+        .row{
+            display: flex;
+        }
+        /*Cột trái*/
+        .left{
+            flex: 35%;
+            padding: 15px 0;
+        }
+        .left h2{
+            padding-left: 8px;
+        }
+        /*Cột phải */
+        .right{
+            flex: 65%;
+            padding: 15px;
+        }
+
+        /*seach box*/
+        #mySearch{
+            width: 100%;
+            font-size: 18px;
+            padding: 11px;
+            border: 1px solid #ddd;
+        }
+        #myMenu{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myMenu li a{
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+        }
+        #myMenu li a:hover{
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h2>Search Menu</h2>
+    <div class="row">
+        <div class="left" style="background-color: #bbb;">
+            <h2>Menu</h2>
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search..." title="Type in a category">
+            <ul id="myMenu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">jQuery</a></li>
+                <li><a href="#">SQL</a></li>
+                <li><a href="#">Node.js</a></li>
+            </ul>
+        </div>
+
+        <div class="right" style="background-color: #ddd;">
+            <h2>Hoa Sen</h2>
+            <p>Hoa sen (tiếng Phạn: padma; tiếng Nhật: renge) trong Phật giáo là biểu tượng của sự thuần khiết và sinh hóa hồn nhiên (svayambhu). </p>
+            <p>Hoa sen (tiếng Phạn: padma; tiếng Nhật: renge) trong Phật giáo là biểu tượng của sự thuần khiết và sinh hóa hồn nhiên (svayambhu). </p>
+            <p>Hoa sen (tiếng Phạn: padma; tiếng Nhật: renge) trong Phật giáo là biểu tượng của sự thuần khiết và sinh hóa hồn nhiên (svayambhu). </p>
+            <p>Hoa sen (tiếng Phạn: padma; tiếng Nhật: renge) trong Phật giáo là biểu tượng của sự thuần khiết và sinh hóa hồn nhiên (svayambhu). </p>
+            <p>Hoa sen (tiếng Phạn: padma; tiếng Nhật: renge) trong Phật giáo là biểu tượng của sự thuần khiết và sinh hóa hồn nhiên (svayambhu). </p>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+            for(i = 0; i < li.length; i++){
+                a = li[i].getElementsByTagName("a")[0];
+                if(a.innerHTML.toUpperCase().indexOf(filter) > -1){
+                    li[i].style.display = "";
+                }else{
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
